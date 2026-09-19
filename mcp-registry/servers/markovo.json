@@ -35,25 +35,52 @@
     }
   },
   "tools": [
-    {"name": "markovo_convert", "description": "Convert a supported file through the account-metered Markovo API."},
-    {"name": "markovo_convert_url", "description": "Convert one public HTTPS page after explicit consent to Markovo's isolated remote fetch."},
-    {"name": "markovo_job_status", "description": "Fetch a remote job."},
-    {"name": "markovo_job_assets", "description": "List manifest-verified image assets for a completed job."},
-    {"name": "markovo_asset_url", "description": "Create a revocable 60-600 second bearer URL for one Bundle image."},
-    {"name": "markovo_asset_revoke", "description": "Revoke a temporary asset URL before it expires."},
-    {"name": "markovo_usage", "description": "Fetch account Credit usage."},
-    {"name": "markovo_capabilities", "description": "Fetch the live capability registry."},
-    {"name": "markovo_billing", "description": "Return the secure billing URL."},
-    {"name": "markovo_bundle_verify", "description": "Verify a downloaded Markovo bundle."},
-    {"name": "markovo_doctor", "description": "Check client, service, and API-key readiness."}
+    {
+      "name": "markovo_convert",
+      "description": "Convert a supported file through the account-metered Markovo API."
+    },
+    {
+      "name": "markovo_convert_url",
+      "description": "Convert one public HTTPS page after explicit consent to Markovo's isolated remote fetch."
+    },
+    {
+      "name": "markovo_job_status",
+      "description": "Fetch a remote job."
+    },
+    {
+      "name": "markovo_job_assets",
+      "description": "List manifest-verified image assets for a completed job."
+    },
+    {
+      "name": "markovo_asset_url",
+      "description": "Create a revocable 60-600 second bearer URL for one Bundle image."
+    },
+    {
+      "name": "markovo_asset_revoke",
+      "description": "Revoke a temporary asset URL before it expires."
+    },
+    {
+      "name": "markovo_usage",
+      "description": "Fetch account Credit usage."
+    },
+    {
+      "name": "markovo_capabilities",
+      "description": "Fetch the live capability registry."
+    },
+    {
+      "name": "markovo_billing",
+      "description": "Return the secure billing URL."
+    },
+    {
+      "name": "markovo_bundle_verify",
+      "description": "Verify a downloaded Markovo bundle."
+    },
+    {
+      "name": "markovo_doctor",
+      "description": "Check client, service, and API-key readiness."
+    }
   ],
   "installations": {
-    "remote": {
-      "type": "http",
-      "url": "https://markovo.net/mcp",
-      "description": "Hosted Streamable HTTP endpoint; MCP hosts discover OAuth 2.1 metadata automatically (scopes markovo:read / markovo:convert). Recommended.",
-      "recommended": true
-    },
     "uvx": {
       "type": "uvx",
       "command": "uvx",
@@ -67,7 +94,13 @@
         "MARKOVO_API_KEY": "${MARKOVO_API_KEY}",
         "MARKOVO_MCP_ROOT": "${MARKOVO_MCP_ROOT}"
       },
-      "description": "Local stdio server via PyPI; file tools sandboxed to MARKOVO_MCP_ROOT"
+      "description": "Local stdio server via PyPI; file tools sandboxed to MARKOVO_MCP_ROOT",
+      "recommended": true
+    },
+    "remote": {
+      "type": "http",
+      "url": "https://markovo.net/mcp",
+      "description": "Hosted Streamable HTTP endpoint; MCP hosts discover OAuth 2.1 metadata automatically (scopes markovo:read / markovo:convert). Recommended."
     }
   },
   "is_official": false
